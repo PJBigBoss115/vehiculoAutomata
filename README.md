@@ -174,19 +174,19 @@ main()
 
 ## Descripción del Flujo Principal
 1. Inicialización de la Ventana de Configuración:
-  + Se crea una ventana llamada 'Settings' con controles deslizantes para ajustar los valores HSV.
+      + Se crea una ventana llamada 'Settings' con controles deslizantes para ajustar los valores HSV.
 2. Inicialización de la Captura de Video:
-  + Se abre la cámara y se verifica si se ha abierto correctamente.
+      + Se abre la cámara y se verifica si se ha abierto correctamente.
 3. Bucle Principal:
-  + Se captura cada frame de la cámara y se preprocesa para el modelo de TensorFlow.
-  + Se realiza la detección de objetos utilizando el modelo de TensorFlow.
-  + Se obtienen los valores de los controles deslizantes para definir el rango de color en HSV.
-  + Se crea una máscara para el color de seguimiento y se encuentran los contornos en la máscara.
-  + Si se detecta color, se ajusta la velocidad de los motores según la posición del color.
-  + Se detectan colores rojo, verde y amarillo mediante TensorFlow y se ajustan las velocidades de los motores en consecuencia.
-  + Se muestra el frame original y la máscara en ventanas de OpenCV.
+      + Se captura cada frame de la cámara y se preprocesa para el modelo de TensorFlow.
+      + Se realiza la detección de objetos utilizando el modelo de TensorFlow.
+      + Se obtienen los valores de los controles deslizantes para definir el rango de color en HSV.
+      + Se crea una máscara para el color de seguimiento y se encuentran los contornos en la máscara.
+      + Si se detecta color, se ajusta la velocidad de los motores según la posición del color.
+      + Se detectan colores rojo, verde y amarillo mediante TensorFlow y se ajustan las velocidades de los motores en consecuencia.
+      + Se muestra el frame original y la máscara en ventanas de OpenCV.
 4. Liberación de Recursos:
-  + Se liberan la captura de video y se cierran todas las ventanas de OpenCV.
+      + Se liberan la captura de video y se cierran todas las ventanas de OpenCV.
 
 ### Ejecución del Programa
 La función main() se ejecuta al final para iniciar todo el proceso.
