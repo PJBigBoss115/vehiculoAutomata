@@ -22,7 +22,7 @@ if not cap.isOpened():
     print("Error: No se puede abrir la cÃ¡mara.")
     exit()
 
-# Obtener la versiÃ³n de OpenCV
+# Obtener la version de OpenCV
 (major_ver, minor_ver, subminor_ver) = (cv.__version__).split('.')
 
 while True:
@@ -45,14 +45,14 @@ while True:
     lower_bound = np.array([h_lower, s_lower, v_lower])
     upper_bound = np.array([h_upper, s_upper, v_upper])
 
-    # Crear una mÃ¡scara para el color
+    # Crear una mascara para el color
     mask = cv.inRange(hsv, lower_bound, upper_bound)
 
-    # Realizar operaciones morfolÃ³gicas para limpiar la mÃ¡scara
+    # Realizar operaciones morfologicas para limpiar la mascara
     mask = cv.erode(mask, None, iterations=2)
     mask = cv.dilate(mask, None, iterations=2)
 
-    # Encontrar contornos en la mÃ¡scara
+    # Encontrar contornos en la mascara
     if int(major_ver) < 4:
         # Para OpenCV 3.x
         _, contours, _ = cv.findContours(mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
@@ -62,11 +62,11 @@ while True:
 
     # Dibujar contornos en el frame original
     for contour in contours:
-        if cv.contourArea(contour) > 500:  # Filtrar pequeÃ±os contornos
+        if cv.contourArea(contour) > 500:  # Filtrar pequeños contornos
             x, y, w, h = cv.boundingRect(contour)
             cv.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    # Mostrar el frame original y la mÃ¡scara
+    # Mostrar el frame original y la mascara
     cv.imshow('Frame', frame)
     cv.imshow('Mask', mask)
 
