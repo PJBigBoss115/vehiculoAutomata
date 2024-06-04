@@ -6,30 +6,30 @@ from Transbot_Lib import Transbot
 # Crear un objeto Transbot llamado bot
 bot = Transbot()
 
-# Iniciar la recepciÃ³n de datos, solo puede iniciarse una vez, todas las funciones de lectura de datos se basan en este mÃ©todo
+# Iniciar la recepción de datos, solo puede iniciarse una vez. Todas las funciones de lectura de datos se basan en este método.
 bot.create_receive_threading()
 
-# Habilitar el envÃ­o automÃ¡tico de datos
+# Habilitar el envío automático de datos
 enable = True
 bot.set_auto_report_state(enable, forever=False)
 
-# Deshabilitar el envÃ­o automÃ¡tico de datos
+# Deshabilitar el envío automático de datos
 enable = False
 bot.set_auto_report_state(enable, forever=False)
 
-# Limpiar los datos en cachÃ© enviados automÃ¡ticamente por el MCU
+# Limpiar los datos en caché enviados automáticamente por el MCU
 bot.clear_auto_report_data()
 
-# FunciÃ³n para mover los motores a una velocidad media
+# Función para mover los motores a una velocidad media
 def move_motors_medium_speed():
-    bot.set_car_motion(0.5, 0.0)  # Mover adelante a 50% de la velocidad mÃ¡xima
+    bot.set_car_motion(0.5, 0.0)  # Mover adelante a 50% de la velocidad máxima
 
-# FunciÃ³n principal para detecciÃ³n de color y movimiento de motores
+# Función principal para detección de color y movimiento de motores
 def main():
     def nothing(x):
         pass
 
-    # Crear una ventana de configuraciÃ³n
+    # Crear una ventana de configuración
     cv.namedWindow('Settings')
 
     # Crear controles deslizantes para ajustar los valores HSV
@@ -44,10 +44,10 @@ def main():
     cap = cv.VideoCapture(0)
 
     if not cap.isOpened():
-        print("Error: No se puede abrir la cÃ¡mara.")
+        print("Error: No se puede abrir la cámara.")
         exit()
 
-    # Obtener la versiÃ³n de OpenCV
+    # Obtener la versión de OpenCV
     (major_ver, minor_ver, subminor_ver) = (cv.__version__).split('.')
 
     while True:
@@ -70,14 +70,14 @@ def main():
         lower_bound = np.array([h_lower, s_lower, v_lower])
         upper_bound = np.array([h_upper, s_upper, v_upper])
 
-        # Crear una mÃ¡scara para el color
+        # Crear una máscara para el color
         mask = cv.inRange(hsv, lower_bound, upper_bound)
 
-        # Realizar operaciones morfolÃ³gicas para limpiar la mÃ¡scara
+        # Realizar operaciones morfológicas para limpiar la máscara
         mask = cv.erode(mask, None, iterations=2)
         mask = cv.dilate(mask, None, iterations=2)
 
-        # Encontrar contornos en la mÃ¡scara
+        # Encontrar contornos en la máscara
         if int(major_ver) < 4:
             # Para OpenCV 3.x
             _, contours, _ = cv.findContours(mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
@@ -88,7 +88,7 @@ def main():
         # Dibujar contornos en el frame original y mover motores si se detecta color
         color_detected = False
         for contour in contours:
-            if cv.contourArea(contour) > 500:  # Filtrar pequeÃ±os contornos
+            if cv.contourArea(contour) > 500:  # Filtrar pequeños contornos
                 x, y, w, h = cv.boundingRect(contour)
                 cv.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 color_detected = True
@@ -98,7 +98,7 @@ def main():
         else:
             bot.set_car_motion(0, 0)  # Detener los motores si no se detecta color
 
-        # Mostrar el frame original y la mÃ¡scara
+        # Mostrar el frame original y la máscara
         cv.imshow('Frame', frame)
         cv.imshow('Mask', mask)
 
@@ -111,5 +111,5 @@ def main():
     cv.destroyAllWindows()
     bot.set_car_motion(0, 0)  # Asegurarse de detener los motores al final
 
-# Ejecutar la funciÃ³n principal
+# Ejecutar la función principal
 main()
