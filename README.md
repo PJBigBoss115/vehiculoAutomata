@@ -204,6 +204,32 @@ Video:
 
 https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/9ffef43f-8ef2-4a0b-b952-bbd4beaa1c07
 
+### Segunda prueba
+Se logro aislar de manera exitosa el ruido y enfocar de manera correcta el objetivo.
+
+![WhatsApp Image 2024-06-03 at 9 59 50 PM](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/5d33a8bf-e1b3-4665-a0f2-bf34ade91985)
+
+Video:
+
+https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/36e14c60-67d2-4ba1-9a66-d9d631846ec2
+
+Esta prueba fue mas exitosa, pero debido a variaciones en la iluminación se pierde el objetivo evitando que pueda seguir de
+manera adecuada su linea.
+
+![WhatsApp Image 2024-06-03 at 9 59 19 PM](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/cb88f5dc-d079-4b7e-be7e-a99a02db977c)
+
+Se tiene algunas propuestas para poder solucionar este problema.
+
+![WhatsApp Image 2024-06-03 at 9 59 18 PM (3)](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/ac0c7399-ad93-4b84-8c70-b567ad4b4b15)
+
+Desde utilizar objetivos mas oscuros hasta el poder llevar una linterna en el mismo robot para que este pueda iluminar sus objetivos y que la variacion
+no exista.
+
+![WhatsApp Image 2024-06-03 at 9 59 18 PM](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/8c41a6ef-8101-4b8e-8284-c297ec522096)
+
+Pero tambien se podria entrenar el modelo de mejor forma para que detecte matices y no solo un color solido.
+
+![WhatsApp Image 2024-06-03 at 9 59 18 PM (2)](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/9a75f855-f014-42da-baf4-84efab554ea2)
 
 
 
