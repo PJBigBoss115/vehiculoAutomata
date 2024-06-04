@@ -1,6 +1,8 @@
 # vehiculoAutomata
 ROS automata 
 
+[Ir a pruebas de funcionamiento](#Pruebas-de-funcionamiento)
+
 # Explicación del Código: Detección de Objetos y Control de Motores con TensorFlow y OpenCV
 Este código utiliza un modelo preentrenado de TensorFlow y OpenCV para detectar objetos y controlar un robot Transbot basado en la detección de colores y objetos. A continuación se detalla la funcionalidad de cada sección del código.
 
@@ -190,3 +192,5 @@ main()
 
 ### Ejecución del Programa
 La función main() se ejecuta al final para iniciar todo el proceso.
+
+## Pruebas de funcionamiento
