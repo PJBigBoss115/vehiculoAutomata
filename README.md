@@ -194,3 +194,18 @@ main()
 La función main() se ejecuta al final para iniciar todo el proceso.
 
 ## Pruebas de funcionamiento
+
+### Primera prueba
+La primera prueba presenta un poco de ruido por lo cual el modelo detecta objetivos ajenos a la cinta.
+
+![WhatsApp Image 2024-06-03 at 10 00 01 PM](https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/2fd2413c-201b-4f8e-99da-a4c32e322393)
+
+Video:
+
+https://github.com/PJBigBoss115/vehiculoAutomata/assets/65696918/9ffef43f-8ef2-4a0b-b952-bbd4beaa1c07
+
+
+
+
+
+
