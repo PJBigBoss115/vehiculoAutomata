@@ -4,21 +4,21 @@ from Transbot_Lib import Transbot
 # Crear un objeto Transbot llamado bot
 bot = Transbot()
 
-# Iniciar la recepciÃ³n de datos, solo puede iniciarse una vez, todas las funciones de lectura de datos se basan en este mÃ©todo
+# Iniciar la recepción de datos, solo puede iniciarse una vez. Todas las funciones de lectura de datos se basan en este método.
 bot.create_receive_threading()
 
-# Habilitar el envÃ­o automÃ¡tico de datos
+# Habilitar el envío automático de datos
 enable = True
 bot.set_auto_report_state(enable, forever=False)
 
-# Deshabilitar el envÃ­o automÃ¡tico de datos
+# Deshabilitar el envío automático de datos
 enable = False
 bot.set_auto_report_state(enable, forever=False)
 
-# Limpiar los datos en cachÃ© enviados automÃ¡ticamente por el MCU
+# Limpiar los datos en caché enviados automáticamente por el MCU
 bot.clear_auto_report_data()
 
-# FunciÃ³n para mover los motores de forma progresiva
+# Función para mover los motores de forma progresiva
 def move_motors_gradually():
     print("Moviendo motores de forma progresiva por 10 segundos...")
 
@@ -41,5 +41,5 @@ def move_motors_gradually():
     print("Deteniendo motores...")
     bot.set_car_motion(0, 0)  # Detener los motores
 
-# Ejecutar la funciÃ³n de movimiento de motores
+# Ejecutar la función de movimiento de motores
 move_motors_gradually()
